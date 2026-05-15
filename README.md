@@ -1,45 +1,27 @@
-## 🔐 Security Features
+Repositório Secundário — IdenCrypt 
 
-### 🪟 Windows
-- AppContainer Isolation  
-- Restricted Tokens  
-- DEP / ASLR  
-- WFP Firewall  
-- Win32k Blocking  
-- Isolated Desktop  
+Este repositório é, intencionalmente, um ambiente de código descartável.
+Em outras palavras: um “lixo controlado” por design. 💀😄
 
-### 🐧 Linux
-- inotify Monitoring  
-- Namespaces (PID, Mount, Network)  
-- Seccomp Filtering  
-- OpenSSL Cryptography  
-- pthread Mutex Locking  
+Seu propósito é servir como laboratório de testes para ideias, experimentos e protótipos — muitos deles incompletos, instáveis ou gerados por Inteligência Artificial.
 
----
+Nada aqui deve ser considerado confiável ou pronto para uso em ambientes reais.
 
-## 📦 FFI Bindings
+Este espaço existe para:
 
-O projeto expõe funções C para Rust via FFI:
+Testar conceitos sem compromisso com estabilidade
+Validar rapidamente ideias e abordagens
+Experimentar código gerado por IA
+Explorar possibilidades antes de qualquer integração séria
 
-### Vault Lifecycle
-```c
-int vault_create_ffi(const char *name, int vault_type, const char *path, const char *password);
-int vault_delete_ffi(uint32_t id, const char *password);
-int vault_rename_ffi(uint32_t id, const char *new_name, const char *password);
-int vault_unlock_ffi(uint32_t id, const char *password);
-int vault_change_password_ffi(uint32_t id, const char *old_pass, const char *new_pass);
-Cryptography
-c
-int vault_encrypt_ffi(uint32_t id, const char *password);
-int vault_decrypt_ffi(uint32_t id, const char *password);
-Monitoring
-c
-int vault_scan_ffi(uint32_t id);
-int vault_resolve_ffi(uint32_t id, const char *password);
-Info
-c
-void vault_info_ffi(uint32_t id);
-void vault_list_ffi();
-void vault_files_ffi(uint32_t id);
-Sandbox
-c
+Por definição, este repositório pode conter:
+
+Código quebrado
+Implementações inseguras
+Arquiteturas inconsistentes
+Experimentos abandonados
+
+Mesmo assim, há uma revisão humana mínima para evitar conteúdo totalmente incoerente.
+
+O repositório principal, estável e recomendado para uso, está disponível em:
+https://github.com/HPPeterSteve/IdenVault
